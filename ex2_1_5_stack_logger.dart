@@ -14,32 +14,33 @@ class Stack<T> with Loggable {
 
   T pop() {
     if (_items.isEmpty) {
-      throw Exception('Stack is empty');
+      print('Stack is empty. Cannot pop item.');
+      return -1 as T; // Return a default value to satisfy the return type
     }
     T item = _items.removeLast();
     log('Popped item: $item');
     return item;
   }
 
-  @override
-  String toString() {
-    return 'Stack contents: $_items';
-  }
+  // @override
+  // String toString() {
+  //   return 'Stack contents: $_items';
+  // }
 
-  bool get isEmpty => _items.isEmpty;
+  // bool get isEmpty => _items.isEmpty;
 
-  int get length => _items.length;
+  // int get length => _items.length;
 }
 
 void main() {
   // Example usage of Stack with logging
   Stack<int> stack = Stack<int>();
+  stack.pop();
   stack.push(1);
   stack.push(2);
-  stack.push(3);
-  print('Stack length: ${stack.length}');
+  // print('Stack length: ${stack.length}');
   int poppedItem = stack.pop();
   print('Popped item: $poppedItem');
-  print(stack);
+  // print(stack);
 }
 

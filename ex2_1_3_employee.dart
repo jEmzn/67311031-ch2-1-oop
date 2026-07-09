@@ -1,32 +1,34 @@
 class Employee {
-
-  void calculateSalary(int daysWorked) {
-    print("Salary(Employee): ${daysWorked * 500.0} Baht");
+  void calculateSalary() {
+    print("No salary calculation for base Employee class.");
   }
 }
 
 class PartTimeEmployee extends Employee {
+  int daysWorked;
+  PartTimeEmployee({this.daysWorked = 0});
   @override
-  void calculateSalary(int daysWorked) {
-    print("Salary(PartTimeEmployee): ${daysWorked * 300.0} Baht");
+  void calculateSalary() {
+    print("Salary(PartTimeEmployee): ${daysWorked * 300.0} Baht for $daysWorked days worked.");
   }
 }
 
 class FullTimeEmployee extends Employee {
+  int mounthWorked;
+  FullTimeEmployee({this.mounthWorked = 0});
   @override
-  void calculateSalary(int daysWorked) {
-    print("Salary(FullTimeEmployee): ${daysWorked * 400.0} Baht");
+  void calculateSalary() {
+    print("Salary(FullTimeEmployee): ${mounthWorked * 12000.0} Baht for $mounthWorked months worked.");
   }
 }
 
 void main() {
   List<Employee> employees = [
     Employee(),
-    PartTimeEmployee(),
-    FullTimeEmployee(),
+    PartTimeEmployee(daysWorked: 20),
+    FullTimeEmployee(mounthWorked: 3),
   ];
   for (var employee in employees) {
-    employee.calculateSalary(10); // Example: 10 days worked
+    employee.calculateSalary();
   }
 }
-

@@ -22,25 +22,14 @@ class Stack<T> with Loggable {
     return item;
   }
 
-  // @override
-  // String toString() {
-  //   return 'Stack contents: $_items';
-  // }
-
-  // bool get isEmpty => _items.isEmpty;
-
-  // int get length => _items.length;
 }
 
 void main() {
-  // Example usage of Stack with logging
   Stack<int> stack = Stack<int>();
   stack.pop();
   stack.push(1);
   stack.push(2);
-  // print('Stack length: ${stack.length}');
   int poppedItem = stack.pop();
   print('Popped item: $poppedItem');
-  // print(stack);
 }
 

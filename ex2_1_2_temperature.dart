@@ -1,6 +1,5 @@
 class Temperature {
   double _celsius = 0.0;
-  // Temperature(this._celsius);
 
   // Getter and setter for celsius
   double get celsius => _celsius;
